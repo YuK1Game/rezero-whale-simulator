@@ -1,0 +1,1 @@
+export default [50, 60, 70, 80];
