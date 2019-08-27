@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grommet } from 'grommet';
+import { Box, Grommet, Heading } from 'grommet';
 
 const theme = {
     global: {
@@ -28,7 +28,11 @@ const AppBar = props => (
 const Layout = props => {
     return (
         <Grommet theme={ theme }>
-            <AppBar>{ props.title }</AppBar>
+            <AppBar>
+                <Heading 
+                    level={ 4 }
+                    margin={'xsmall'} >{ props.title }</Heading>
+            </AppBar>
             <Box pad={'small'}>
                 { props.children }
             </Box>

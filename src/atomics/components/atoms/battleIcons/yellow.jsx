@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from './icon';
+import IconImage from '../../../../resources/images/icons/yellow.png';
 
 export default () => (
-    <Icon src={'http://placehold.jp/ffff00/333333/32x32.png'} />
+    <Icon src={ IconImage } />
 )

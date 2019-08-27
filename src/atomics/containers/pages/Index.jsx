@@ -10,7 +10,7 @@ export default () => {
     // const [norma, setNorma] = useState(3);
 
     return (
-        <Layout title={'撃破アイコン追加'}>
+        <Layout title={'リゼロ白鯨撃破シミュレータ'}>
             <DropIcons 
                 default={ icons }
                 onChange={icons => setIcons(icons)}

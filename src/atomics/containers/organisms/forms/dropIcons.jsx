@@ -25,7 +25,7 @@ export default props => {
     return (
         <React.Fragment>
             <DropButton
-                label={'Test select'}
+                label={'撃破率アイコンの追加'}
                 open={ open }
                 onOpen={() => setOpen(true)}
                 onClose={() => setOpen(false)}

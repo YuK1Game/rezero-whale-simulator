@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Grid, Box } from 'grommet';
+import { Grid, Box, Heading } from 'grommet';
 
 import BaseProperties from '../../../../configs/base';
 import NormaProperties from '../../../../configs/norma';
@@ -48,15 +48,17 @@ export default props => {
         <Fragment>
             <Box
                 gridArea={`b${ base }-subject`}
-                background="#f89325"
+                background={'light-4'}
                 justify={'center'}
                 align={'center'}
-                >{`${ base }%`}</Box>
+                >
+                <Percentage>{ base / 100 }</Percentage>
+            </Box>
             {NormaProperties.map(norma => (
                 <Box 
                     key={ norma }
                     gridArea={`b${ base }-h${ norma }`}
-                    background="#f89325"
+                    background={'light-1'}
                     justify={'center'}
                     align={'center'}
                     >
@@ -80,27 +82,31 @@ export default props => {
 
                 <Box 
                     gridArea={'header'}
-                    background="#f89325"
+                    background={'brand'}
                     justify={'center'}
                     align={'center'}
-                    >撃破期待度早見表</Box>
+                    >
+                    <Heading level={ 5 }>撃破期待度早見表</Heading>
+                </Box>
 
                 <Box 
                     gridArea={'b-header'}
-                    background="#f89325"
+                    background={'light-4'}
                     justify={'center'}
                     align={'center'}
-                    >初期撃破率</Box>
+                    >
+                    <Heading level={ 6 }>初期撃破率</Heading>
+                </Box>
 
                 {NormaProperties.map(norma => (
                     <Box 
                         key={ norma }
                         gridArea={`h${ norma }-header`}
-                        background="#f89325"
+                        background={'light-4'}
                         justify={'center'}
                         align={'center'}
                         >
-                        { norma }体目撃破率
+                        <Heading level={ 6 }>{ norma }体目撃破率</Heading>
                     </Box>
                 ))}
 
