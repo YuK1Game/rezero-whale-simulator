@@ -2,8 +2,6 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Text } from 'grommet';
 
-const GlobalStyle = createGlobalStyle`@import url('https://fonts.googleapis.com/css?family=Orbitron');`;
-
 export default ({ children, point }) => {
     const number = parseFloat(children);
 
@@ -17,7 +15,6 @@ export default ({ children, point }) => {
         <Text
             color={ color }
             >
-            <GlobalStyle />
             <Digit>
                 { Math.floor(number * 100 * Math.pow(10, point || 0)) / Math.pow(10, point || 0) }%
             </Digit>

@@ -6,10 +6,18 @@ export default class Calculator {
     }
 
     totalAdditionalPercentage = base => {
-        const values = base + this.icons.map(iconName => {
+        // 保証分だけ先に計算
+        let values = base + this.icons.map(iconName => {
+            return IconProperties[iconName].default;
+        })
+        .reduce((p, value) => p + value, 0);
+
+        // 保証分だけで100%を超えたため確定
+        if (values >= 1) return 1;
+
+        values += this.icons.map(iconName => {
             const property = IconProperties[iconName];
-            const percent = property.default + ((1 / (1 - property.loop) - 1) * 0.01);
-            return percent >= 1 ? 1 : percent;
+            return ((1 / (1 - property.loop) - 1) * 0.01);
         })
         .reduce((p, value) => p + value, 0);
         

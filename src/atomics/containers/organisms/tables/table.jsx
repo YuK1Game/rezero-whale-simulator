@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Grid, Box, Heading } from 'grommet';
+import { Grid, Box, Heading, Text } from 'grommet';
 
 import BaseProperties from '../../../../configs/base';
 import NormaProperties from '../../../../configs/norma';
@@ -95,7 +95,7 @@ export default props => {
                     justify={'center'}
                     align={'center'}
                     >
-                    <Heading level={ 6 }>初期撃破率</Heading>
+                    <Text size={'small'} weight={'bold'}>初期撃破率</Text>
                 </Box>
 
                 {NormaProperties.map(norma => (
@@ -106,7 +106,7 @@ export default props => {
                         justify={'center'}
                         align={'center'}
                         >
-                        <Heading level={ 6 }>{ norma }体目撃破率</Heading>
+                        <Text size={'small'} weight={'bold'}>{ norma }体目撃破率</Text>
                     </Box>
                 ))}
 
