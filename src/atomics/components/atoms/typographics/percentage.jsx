@@ -19,7 +19,7 @@ export default ({ children, point }) => {
             >
             <GlobalStyle />
             <Digit>
-                { Math.round(number * 100 * Math.pow(10, point || 0)) / Math.pow(10, point || 0) }%
+                { Math.floor(number * 100 * Math.pow(10, point || 0)) / Math.pow(10, point || 0) }%
             </Digit>
         </Text>
     )
