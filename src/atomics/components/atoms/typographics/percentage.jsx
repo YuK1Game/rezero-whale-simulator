@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Text } from 'grommet';
 
 export default ({ children, point }) => {
@@ -15,9 +15,15 @@ export default ({ children, point }) => {
         <Text
             color={ color }
             >
-            <Digit>
-                { Math.floor(number * 100 * Math.pow(10, point || 0)) / Math.pow(10, point || 0) }%
-            </Digit>
+            {number >= 1 ? (
+                <Digit>
+                    <Rainbow>100%</Rainbow>
+                </Digit>
+            ) : (
+                <Digit>
+                    { Math.floor(number * 100 * Math.pow(10, point || 0)) / Math.pow(10, point || 0) }%
+                </Digit>
+            )}
         </Text>
     )
 }
@@ -25,4 +31,18 @@ export default ({ children, point }) => {
 const Digit = styled.span`
     font-family: Orbitron;
     font-weight: 900;
+`;
+
+const Animate = keyframes`
+    to {
+        background-position-x: 200%;        
+    }
+`;
+
+const Rainbow = styled.span`
+    text-transform: uppercase;
+    background: linear-gradient(to right, #f00 0%, #f80 14.28%, #dd0 28.56%, #0d0 42.85%, #0dd 57.14%, #00f 71.42%, #e0e 85.71%, #f00 100%) 0% center / 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: ${ Animate } 4s linear infinite;
 `;
